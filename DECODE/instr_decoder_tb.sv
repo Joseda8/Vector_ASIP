@@ -1,0 +1,22 @@
+module instr_decoder_tb();
+
+logic [31:0] instr;
+logic [1:0] sca_reg_op;
+logic [24:0] imm;
+
+instr_decoder utt(instr, sca_reg_op, imm);
+
+initial begin
+	#50 instr = 32'b00100000000000000000000110010000; // SETN 400
+	#50 instr = 32'b00000000000000000000000000000000; // INCRI
+	#50 instr = 32'b00010000000000000000000000000000; // INCRJ
+	#50 instr = 32'b01001000000000000000000000000000; // MULFV 1 0
+	#50 instr = 32'b01010000000000000000000000000000; // NOP
+	#50 instr = 32'b00110000000000000000000000000000; // SUMFV
+	#50 instr = 32'b01101000000000000000000000000000; // LDV 1
+	#50 instr = 32'b01010000000000000000000000000000; // NOP
+	#50;
+end
+
+endmodule
+
