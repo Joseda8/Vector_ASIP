@@ -1,10 +1,10 @@
 module mult_vector_bank_tb();
 
-	logic clk, we;
+	logic clk, wr_mul_pos, we;
 	logic [31:0] wd1, wd2, wd3, wd4, out1, out2, out3, out4, out5, out6, out7, out8;
 	int flag;
 
-	mult_vector_bank uut(clk, we, wd1, wd2, wd3, wd4, 
+	mult_vector_bank uut(clk, wr_mul_pos, we, wd1, wd2, wd3, wd4, 
 								out1, out2, out3, out4, out5, out6, out7, out8,
 								flag);
 								

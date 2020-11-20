@@ -6,7 +6,7 @@ module const_vector_bank(clk, rst, rd_pos, out1, out2, out3, out4);
 	logic [31:0] constants[7:0];
 	
 	initial begin
-		$readmemh("C://Users//DELL//Desktop//P2-Final//Vector_ASIP//const.txt", constants);
+		$readmemh("C://Users//jdmon//OneDrive//Escritorio//TEC//Proyecto2_arqui//Vector_ASIP//const.txt", constants);
 	end
 	
 	always_ff @(posedge rst) 

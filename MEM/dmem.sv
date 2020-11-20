@@ -8,7 +8,7 @@ module dmem(clk, addr1, addr2, addr3, addr4, out1, out2, out3, out4);
 		logic [31:0] RAM[1023:0];
 		
 		initial begin
-			$readmemh("C://Users//DELL//Desktop//P2-Final//Vector_ASIP//hex2.txt", RAM);
+			$readmemh("C://Users//jdmon//OneDrive//Escritorio//TEC//Proyecto2_arqui//Vector_ASIP//hex2.txt", RAM);
 		end
 
 		assign out1 = RAM[addr1[31:0]]; 

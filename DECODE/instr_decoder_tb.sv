@@ -1,7 +1,7 @@
 module instr_decoder_tb();
 
 logic [31:0] instr;
-logic [1:0] sca_reg_op;
+logic [2:0] sca_reg_op;
 logic [24:0] imm;
 
 instr_decoder utt(instr, sca_reg_op, imm);
