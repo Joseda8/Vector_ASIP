@@ -28,7 +28,7 @@ IF fetch(clk, rst, instr);
 
 pipeFetchDecode pipeIFID(clk, rst, instr, instr_out);
 
-Decode uut(clk, rst, instr_out, 
+Decode decode(clk, rst, instr_out, 
 			  wr_pos_pxl, we_pxl, we_mul,  
 			  wdp1, wdp2, wdp3, wdp4, 
 			  wdm1, wdm2, wdm3, wdm4, wr_mul_pos_in,

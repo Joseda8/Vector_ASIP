@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC7C7F23C8
-set_global_assignment -name TOP_LEVEL_ENTITY vector_cpu_IFID_tb
+set_global_assignment -name TOP_LEVEL_ENTITY vector_cpu_IFIDEXE_tb
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:23:08  NOVEMBER 18, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
@@ -93,6 +93,9 @@ set_global_assignment -name SYSTEMVERILOG_FILE MEM/mem_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DECODE/scalar_reg_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE TOP/IF_ID/vector_cpu_IFID.sv
 set_global_assignment -name SYSTEMVERILOG_FILE TOP/IF_ID/vector_cpu_IFID_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE DECODE/pipeDecodeExe.sv
+set_global_assignment -name SYSTEMVERILOG_FILE TOP/IF_ID_EXE/vector_cpu_IFIDEXE.sv
+set_global_assignment -name SYSTEMVERILOG_FILE TOP/IF_ID_EXE/vector_cpu_IFIDEXE_tb.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

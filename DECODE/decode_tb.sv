@@ -33,13 +33,14 @@ module decode_tb();
 		// escribir valores en multiplicacion
 		#10 wr_pos_pxl = 0; wr_mul_pos_in = 0; we_mul = 1; wdm1 = 32'd15; wdm2 = 32'd16; wdm3 = 32'd17; wdm4 = 32'd18; 
 		#10 wr_pos_pxl = 1; wr_mul_pos_in = 1; we_mul = 1; wdm1 = 32'd150; wdm2 = 32'd160; wdm3 = 32'd170; wdm4 = 32'd180;
+				
 		//#10 instruction = 32'b00110000000000000000000000000000;
 		
 		// multiplicación de pix x cte
 		//#10 instruction = 32'b01001100000000000000000000000000; // MULFV 1 0
 		
 		// suma
-		#10 instruction = 32'b00110000000000000000000000000000; // SUMFV
+		#10 instruction = 32'b01001000000000000000000000000000; // SUMFV
 	end
 	
 	always #5 clk = ~clk;

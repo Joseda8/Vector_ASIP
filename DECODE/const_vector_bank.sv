@@ -8,9 +8,6 @@ module const_vector_bank(clk, rst, rd_pos, out1, out2, out3, out4);
 	initial begin
 		$readmemh("C://Users//jdmon//OneDrive//Escritorio//TEC//Proyecto2_arqui//Vector_ASIP//const.txt", constants);
 	end
-	
-	always_ff @(posedge rst) 
-		constants <= '{8{32'b0}};
 		
 	assign out1 = rd_pos ? constants[4] : constants[0];
 	assign out2 = rd_pos ? constants[5] : constants[1];
