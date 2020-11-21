@@ -10,8 +10,6 @@ module vector_cpu_IFIDEXE(clk, rst, instr_out,
 								i_pipe, j_pipe, n_pipe, wom_addr_pipe, wr_mul_pos_pipe, 
 								
 								r1, r2, r3, r4);
-			  
-
 
 input logic clk, rst;
 

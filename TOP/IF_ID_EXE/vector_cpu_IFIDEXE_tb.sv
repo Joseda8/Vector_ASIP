@@ -34,8 +34,11 @@ initial begin
 	clk <= 1; rst <= 1;
 	#10 rst <= 0;
 	
-	#10 wr_pos_pxl = 0; wr_mul_pos_in = 0; we_mul = 1; wdm1 = 32'h416D5267; wdm2 = 32'h416D5263; wdm3 = 32'h415D5267; wdm4 = 32'h426D5267; 
-	#10 wr_pos_pxl = 1; wr_mul_pos_in = 1; we_mul = 1; wdm1 = 32'h416D5267; wdm2 = 32'h416D5263; wdm3 = 32'h415D5267; wdm4 = 32'h426D5267; 
+	#10 we_pxl = 1; wr_pos_pxl = 0; wdp1 = 32'h416D5267; wdp2 = 32'h416D5263; wdp3 = 32'h415D5267; wdp4 = 32'h426D5267;
+	#10 we_pxl = 1; wr_pos_pxl = 1; wdp1 = 32'h416D5367; wdp2 = 32'h416C5263; wdp3 = 32'h415D5267; wdp4 = 32'h426D506B;
+	#10 we_pxl = 0; wr_mul_pos_in = 0; we_mul = 1; wdm1 = 32'h416D5267; wdm2 = 32'h416D5263; wdm3 = 32'h415D5267; wdm4 = 32'h426D5267; 
+	#10 wr_mul_pos_in = 1; we_mul = 1; wdm1 = 32'h416D5267; wdm2 = 32'h416D5263; wdm3 = 32'h415D5267; wdm4 = 32'h426D5267; 
+	#10 we_mul = 0;
 	#10;
 	
 end
