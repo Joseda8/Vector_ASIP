@@ -1,7 +1,4 @@
 module vector_cpu(clk, rst, instr_out, 
-								wr_pos_pxl, we_pxl, we_mul,  
-								wdp1, wdp2, wdp3, wdp4, 
-								wdm1, wdm2, wdm3, wdm4, wr_mul_pos_in, 
 								
 								wr_pxl_wb, wr_pos_wb, wr_mul_reg_wb, alu_func_pipe, wr_wom_pipe_out,
 								pix1_pipe, pix2_pipe, pix3_pipe, pix4_pipe,
@@ -14,9 +11,6 @@ module vector_cpu(clk, rst, instr_out,
 								sumr1, sumr2, sumr3, sumr4);
 
 input logic clk, rst;
-
-input logic wr_pos_pxl, we_pxl, we_mul, wr_mul_pos_in;
-input logic [31:0] wdp1, wdp2, wdp3, wdp4, wdm1, wdm2, wdm3, wdm4;
 
 output logic wr_pxl_wb, wr_pos_wb, wr_mul_reg_wb, wr_mul_pos_wb;
 output logic [31:0] instr_out;
