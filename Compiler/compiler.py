@@ -35,6 +35,6 @@ for index, instr in enumerate(code):
             i+=1
     elif(instr == "LDV"):
         code_exe.write(isa[instr]+code[index+1]+zeros[:-1]+"\n")
-
+        code_exe.write(isa[instr]+code[index+1]+zeros[:-1]+"\n")
 
 code_exe.close()
