@@ -1,4 +1,4 @@
-module vector_cpu_IFIDEXE(clk, rst, instr_out, 
+module vector_cpu_IFIDEXEMEM(clk, rst, instr_out, 
 								wr_pos_pxl, we_pxl, we_mul,  
 								wdp1, wdp2, wdp3, wdp4, 
 								wdm1, wdm2, wdm3, wdm4, wr_mul_pos_in, 
@@ -9,7 +9,9 @@ module vector_cpu_IFIDEXE(clk, rst, instr_out,
 								mul1_pipe, mul2_pipe, mul3_pipe, mul4_pipe, mul5_pipe, mul6_pipe, mul7_pipe, mul8_pipe,
 								i_pipe_out, j_pipe_out, n_pipe_out, wom_addr_pipe_out, wr_mul_pos_pipe_out, 
 								
-								r1, r2, r3, r4);
+								r1_pipe_out, r2_pipe_out, r3_pipe_out, r4_pipe_out, 
+								
+								load1, load2, load3, load4, sumr1, sumr2, sumr3, sumr4);
 
 input logic clk, rst;
 
@@ -63,7 +65,7 @@ pipeDecodeExe pipeIDEXE(clk, rst,
 					mul1_pipe, mul2_pipe, mul3_pipe, mul4_pipe, mul5_pipe, mul6_pipe, mul7_pipe, mul8_pipe,
 					i_pipe, j_pipe, n_pipe, wom_addr_pipe, wr_mul_pos_pipe);
 					
-output logic [31:0] r1, r2, r3, r4;
+logic [31:0] r1, r2, r3, r4;
 
 Execution exec(clk, alu_func_pipe, 
 				  cte1_pipe, cte2_pipe, cte3_pipe, cte4_pipe,
@@ -74,14 +76,28 @@ Execution exec(clk, alu_func_pipe,
 
 output logic wr_pxl_pipe_out, wr_pos_pipe_out, wr_mul_reg_pipe_out, wr_wom_pipe_out, wr_mul_pos_pipe_out;
 output logic [31:0] i_pipe_out, j_pipe_out, n_pipe_out, wom_addr_pipe_out;
+output logic [31:0] r1_pipe_out, r2_pipe_out, r3_pipe_out, r4_pipe_out; 
 
 pipeExeMem pipeEXEMEM(clk, rst, 
 					wr_pxl_pipe, wr_pos_pipe, wr_mul_reg_pipe, wr_wom_pipe,
 					i_pipe, j_pipe, n_pipe, wom_addr_pipe, wr_mul_pos_pipe,
+					r1, r2, r3, r4,
 					
 					wr_pxl_pipe_out, wr_pos_pipe_out, wr_mul_reg_pipe_out, wr_wom_pipe_out,
-					i_pipe_out, j_pipe_out, n_pipe_out, wom_addr_pipe_out, wr_mul_pos_pipe_out
+					i_pipe_out, j_pipe_out, n_pipe_out, wom_addr_pipe_out, wr_mul_pos_pipe_out,
+					r1_pipe_out, r2_pipe_out, r3_pipe_out, r4_pipe_out
 					);
-					
 
+
+logic algorithm = 0;
+
+output logic [31:0] load1, load2, load3, load4, sumr1, sumr2, sumr3, sumr4;
+
+Memory mem(clk, wr_wom_pipe_out, i_pipe_out, j_pipe_out, n_pipe_out, wom_addr_pipe_out, algorithm,
+				  r1_pipe_out, r2_pipe_out, r3_pipe_out, r4_pipe_out,
+				  
+				  load1, load2, load3, load4,
+				  sumr1, sumr2, sumr3, sumr4);
+
+//wr_pxl_pipe_out, wr_pos_pipe_out
 endmodule 

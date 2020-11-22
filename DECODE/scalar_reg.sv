@@ -67,7 +67,7 @@ module scalar_reg(clk, rst, sca_reg_op, imm, i_out, j_out, n_out, wom_addr_out, 
 					i_out = 32'bx;
 					j_out = 32'bx;
 					n_out = 32'bx;
-					wom_addr_out = 32'bx;
+					wom_addr_out = wom_addr_out;
 					wr_mul_pos_out = 1'bx;
 				end
 			3'b111: //LDV

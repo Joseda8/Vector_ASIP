@@ -1,7 +1,7 @@
 module Memory(clk, wr_wom, i, j, n, wom_addr, algorithm,
 				  result1, result2, result3, result4,
-				  load1, load2, load3, load4,
 				  
+				  load1, load2, load3, load4,
 				  sumr1, sumr2, sumr3, sumr4);
 				  
 	input logic clk, wr_wom, algorithm;
