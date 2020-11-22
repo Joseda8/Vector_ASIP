@@ -17,7 +17,7 @@ logic [31:0] r1, r2, r3, r4;
 
 logic [31:0] load1, load2, load3, load4, sumr1, sumr2, sumr3, sumr4;
 
-vector_cpu_IFIDEXEMEM uut(clk, rst, instr_out, 
+vector_cpu uut(clk, rst, instr_out, 
 								wr_pos_pxl, we_pxl, we_mul,  
 								wdp1, wdp2, wdp3, wdp4, 
 								wdm1, wdm2, wdm3, wdm4, wr_mul_pos_in, 
@@ -36,12 +36,13 @@ initial begin
 
 	clk <= 1; rst <= 1;
 	#10 rst <= 0;
-	
+	/*
 	#10 we_pxl = 1; wr_pos_pxl = 0; wdp1 = 32'h416D5267; wdp2 = 32'h416D5263; wdp3 = 32'h415D5267; wdp4 = 32'h426D5267;
 	#10 we_pxl = 1; wr_pos_pxl = 1; wdp1 = 32'h416D5367; wdp2 = 32'h416C5263; wdp3 = 32'h415D5267; wdp4 = 32'h426D506B;
 	#10 we_pxl = 0; wr_mul_pos_in = 0; we_mul = 1; wdm1 = 32'h416D5267; wdm2 = 32'h416D5263; wdm3 = 32'h415D5267; wdm4 = 32'h426D5267; 
 	#10 wr_mul_pos_in = 1; we_mul = 1; wdm1 = 32'h416D5267; wdm2 = 32'h416D5263; wdm3 = 32'h415D5267; wdm4 = 32'h426D5267; 
 	//#10 we_mul = 0;
+	*/
 	#10;
 	
 end

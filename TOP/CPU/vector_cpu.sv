@@ -18,7 +18,11 @@ input logic clk, rst;
 input logic wr_pos_pxl, we_pxl, we_mul, wr_mul_pos_in;
 input logic [31:0] wdp1, wdp2, wdp3, wdp4, wdm1, wdm2, wdm3, wdm4;
 
+output logic wr_pxl_wb, wr_pos_wb, wr_mul_reg_wb, wr_mul_pos_wb;
 output logic [31:0] instr_out;
+
+output logic [31:0] r1_wb, r2_wb, r3_wb, r4_wb, load1_wb, load2_wb, load3_wb, load4_wb;
+
 
 logic wr_pxl, wr_pos, wr_mul_reg, alu_func, wr_wom, wr_mul_pos_out;
 logic [31:0] pix_out1, pix_out2, pix_out3, pix_out4,
@@ -102,8 +106,7 @@ Memory mem(clk, wr_wom_pipe_out, i_pipe_out, j_pipe_out, n_pipe_out, wom_addr_pi
 				  load1, load2, load3, load4,
 				  sumr1, sumr2, sumr3, sumr4);
 
-output logic wr_pxl_wb, wr_pos_wb, wr_mul_reg_wb, wr_mul_pos_wb;
-output logic [31:0] r1_wb, r2_wb, r3_wb, r4_wb, load1_wb, load2_wb,  load3_wb,  load4_wb;
+
 
 pipeMemWb pipeMEMWB(clk, rst, 
 					wr_pxl_pipe_out, wr_pos_pipe_out, wr_mul_reg_pipe, wr_mul_pos_pipe,

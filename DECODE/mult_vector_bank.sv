@@ -36,19 +36,21 @@ module mult_vector_bank(clk, wr_mul_pos, we, wd1, wd2, wd3, wd4,
 	
 	always @(posedge clk) begin
 		if(we) begin
-			if(wr_mul_pos == 0) begin
-				MULT[0][0] <= wd1;
-				MULT[0][32] <= wd2;
-				MULT[0][64] <= wd3;
-				MULT[0][96] <= wd4;
-			end
-			
-			else if(wr_mul_pos == 1) begin
+		
+			if(wr_mul_pos) begin
 				MULT[1][0] <= wd1;
 				MULT[1][32] <= wd2;
 				MULT[1][64] <= wd3;
 				MULT[1][96] <= wd4;
 			end
+			
+			else begin
+				MULT[0][0] <= wd1;
+				MULT[0][32] <= wd2;
+				MULT[0][64] <= wd3;
+				MULT[0][96] <= wd4;			
+			end
+
 		end 
 	end
 	

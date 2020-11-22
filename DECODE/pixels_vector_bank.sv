@@ -5,6 +5,11 @@ module pixels_vector_bank(clk, rst, rd_pos, wr_pos, we, wd1, wd2, wd3, wd4, out1
 	output logic [31:0] out1, out2, out3, out4;
 	
 	logic [31:0] pixels[1:0][127:0];
+	/*
+	initial begin
+		
+	end
+	*/
 	
 	assign out1 = rd_pos ? pixels[1][0] : pixels[0][0];
 	assign out2 = rd_pos ? pixels[1][32] : pixels[0][32];

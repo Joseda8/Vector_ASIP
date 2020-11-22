@@ -20,7 +20,7 @@ output logic [31:0] r1_out, r2_out, r3_out, r4_out, load1_out, load2_out, load3_
 flopr #(1) wr_pxl_pipe (clk, rst, wr_pxl_in, wr_pxl_out);
 flopr #(1) wr_pos_pipe (clk, rst, wr_pos_in, wr_pos_out);
 flopr #(1) wr_mul_pipe (clk, rst, wr_mul_reg_in, wr_mul_reg_out);
-flopr #(1) wr_mul_pos_pipe (clk, rst, wr_mul_pos_in, wr_mul_pos_in);
+flopr #(1) wr_mul_pos_pipe (clk, rst, wr_mul_pos_in, wr_mul_pos_out);
 
 flopr #(32) r1_pipe (clk, rst, r1_in, r1_out);
 flopr #(32) r2_pipe (clk, rst, r2_in, r2_out);
