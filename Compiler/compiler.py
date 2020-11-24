@@ -10,7 +10,7 @@ isa = {"INCRI" : "0000", "INCRJ" : "0001", "SET" : "0010",
 util.replace_cycle("code_user.txt")
 
 code = list(util.generator("code.txt"))
-code_exe = open("code_exe.txt", "w")
+code_exe = open(".././meminstr.txt", "w")
 
 for index, instr in enumerate(code):
     if(instr == "INCR"):
