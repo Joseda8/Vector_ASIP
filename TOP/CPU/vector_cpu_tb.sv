@@ -14,17 +14,7 @@ logic [31:0] r1, r2, r3, r4;
 
 logic [31:0] load1, load2, load3, load4, sumr1, sumr2, sumr3, sumr4;
 
-vector_cpu uut(clk, rst, instr_out, 
-								
-				wr_pxl, wr_pos, wr_mul_reg, alu_func, wr_wom,
-			  pix_out1, pix_out2, pix_out3, pix_out4,
-			  cte_out1, cte_out2, cte_out3, cte_out4,
-			  mul_out1, mul_out2, mul_out3, mul_out4, mul_out5, mul_out6, mul_out7, mul_out8,
-			  i, j, n, wom_addr, wr_mul_pos_out,
-			  
-			  r1, r2, r3, r4,
-			  
-			  load1, load2, load3, load4, sumr1, sumr2, sumr3, sumr4);
+vector_cpu uut(clk, rst, instr_out);
 
 initial begin
 
