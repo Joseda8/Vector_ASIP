@@ -14,7 +14,7 @@ module Execution(clk, alu_func,
 	
 	logic [31:0] alu_in1, alu_in2, alu_in3, alu_in4, alu_in5, alu_in6, alu_in7, alu_in8;
 	
-	vector_data_mux alu_mux(mul1, mul2, mul3, mul4, mul5, mul6, mul7, mul8,
+	vector_data_mux alu_mux(mul1, mul5, mul2, mul6, mul3, mul7, mul4, mul8,
 									pix1, cte1, pix2, cte2, pix3, cte3, pix4, cte4,
 									alu_in1, alu_in2, alu_in3, alu_in4, alu_in5, alu_in6, alu_in7, alu_in8,
 									alu_func);

@@ -1,10 +1,8 @@
-module vector_cpu(clk, rst, instr_out);
+module vector_cpu(clk, rst, algrt);
 
-input logic clk, rst;
+input logic clk, rst, algrt;
 
 logic wr_pxl_wb, wr_pos_wb, wr_mul_reg_wb, wr_mul_pos_wb;
-output logic [31:0] instr_out;
-
 logic [31:0] r1_wb, r2_wb, r3_wb, r4_wb, load1_wb, load2_wb, load3_wb, load4_wb;
 
 
@@ -14,7 +12,7 @@ logic [31:0] pix_out1, pix_out2, pix_out3, pix_out4,
 						mul_out1, mul_out2, mul_out3, mul_out4, mul_out5, mul_out6, mul_out7, mul_out8,
 						i, j, n, wom_addr;
 
-logic [31:0] instr;
+logic [31:0] instr, instr_out;
 
 IF fetch(clk, rst, instr);
 
